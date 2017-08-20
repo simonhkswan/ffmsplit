@@ -2,7 +2,7 @@ import os
 from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = '/uploads/'
+UPLOAD_FOLDER = ''
 ALLOWED_EXTENSIONS = set(['txt', 'mp4'])
 
 application = api = Flask(__name__)

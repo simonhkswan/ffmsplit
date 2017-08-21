@@ -1,11 +1,15 @@
 import os
 from flask import Flask, request, redirect, url_for
+from flask_s3 import FlaskS3
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = '/tmp/'
 ALLOWED_EXTENSIONS = set(['txt', 'mp4'])
 
+
+s3 = FlaskS3()
 application = api = Flask(__name__)
+s3.init_app(api)
 api.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def allowed_file(filename):
